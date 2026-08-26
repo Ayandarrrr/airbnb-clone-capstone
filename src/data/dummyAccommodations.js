@@ -1,0 +1,47 @@
+// src/data/dummyAccommodations.js
+const accommodations = [
+  {
+    id: 1,
+    images: ["/images/new-york-apartment.jpg"],
+    type: "Entire apartment",
+    location: "New York",
+    guests: 4,
+    bedrooms: 2,
+    bathrooms: 2,
+    amenities: ["wifi", "kitchen", "free parking"],
+    rating: 4.5,
+    reviews: 320,
+    price: 320,
+    title: "Modern Apartment in New York",
+  },
+  {
+    id: 2,
+    images: ["/images/cape-town-house.jpg"],
+    type: "Entire house",
+    location: "Cape Town",
+    guests: 6,
+    bedrooms: 3,
+    bathrooms: 2,
+    amenities: ["wifi", "pool", "free parking"],
+    rating: 4.8,
+    reviews: 210,
+    price: 180,
+    title: "Seaside House in Cape Town",
+  },
+  {
+    id: 3,
+    images: ["/images/new-york-loft.jpg"],
+    type: "Entire loft",
+    location: "New York",
+    guests: 2,
+    bedrooms: 1,
+    bathrooms: 1,
+    amenities: ["wifi", "gym"],
+    rating: 4.2,
+    reviews: 95,
+    price: 210,
+    title: "Cozy Loft near Central Park",
+  },
+];
+
+export default accommodations;
