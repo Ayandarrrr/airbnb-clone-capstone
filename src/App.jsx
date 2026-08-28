@@ -22,6 +22,7 @@ import CreateListingPage from "./pages/admin/CreateListingPage";
 import ViewListingsPage from "./pages/admin/ViewListingsPage";
 import UpdateListingPage from "./pages/admin/UpdateListingPage";
 
+import ScrollToTop from "./components/ScrollToTop";
 import NotFoundPage from "./pages/NotFoundPage";
 // Global styles
 import "./styles/global.css";
@@ -32,6 +33,8 @@ function App() {
     // AuthProvider wraps everything so any component can access auth state
     <AuthProvider>
       <BrowserRouter>
+        {/* Scroll to top on every navigation */}
+        <ScrollToTop />
         {/* Header always visible — it adapts its UI based on auth state */}
         <Header />
 
