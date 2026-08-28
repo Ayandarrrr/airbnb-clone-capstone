@@ -748,3 +748,17 @@ input, select, textarea { font-family: inherit; }
     border-right: none;
   }
 }
+
+/* ── Footer social icons ─────────────────────────────────── */
+.footer-social {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.footer-social a {
+  color: var(--text-muted);
+  transition: color .2s;
+  display: flex;
+  align-items: center;
+}
+.footer-social a:hover { color: var(--text-primary); }
