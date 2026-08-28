@@ -762,3 +762,21 @@ input, select, textarea { font-family: inherit; }
   align-items: center;
 }
 .footer-social a:hover { color: var(--text-primary); }
+
+/* ── Spinner ─────────────────────────────────────────────── */
+.spinner-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px;
+}
+.spinner {
+  border: 3px solid var(--border);
+  border-top-color: var(--brand);
+  border-radius: 50%;
+  animation: spin .75s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.spinner-msg { font-size: 0.9rem; color: var(--text-muted); }
