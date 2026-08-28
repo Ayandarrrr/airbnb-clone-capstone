@@ -143,4 +143,5 @@ module.exports = {
   createAccommodation,
   updateAccommodation,
   deleteAccommodation,
+  searchAccommodations,
 };
