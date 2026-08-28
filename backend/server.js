@@ -7,7 +7,8 @@ const cors     = require("cors");
 const mongoose = require("mongoose");
 const path     = require("path");
 
-const errorHandler = require("./middleware/errorHandler");
+const errorHandler    = require("./middleware/errorHandler");
+const requestLogger   = require("./middleware/requestLogger");
 
 // ── Route imports ─────────────────────────────────────────
 const userRoutes          = require("./routes/userRoutes");
@@ -33,6 +34,9 @@ app.use(
 // Parse incoming JSON and URL-encoded bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Request logger (dev only)
+app.use(requestLogger);
 
 // Serve uploaded images statically from /uploads
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
