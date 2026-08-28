@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import accommodations from "../data/dummyAccommodations";
+import Spinner from "../components/Spinner";
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 
@@ -247,7 +248,7 @@ function LocationDetailsPage() {
     fetchListing();
   }, [id]);
 
-  if (loading) return <div className="page-loading">Loading listing…</div>;
+  if (loading) return <Spinner message="Loading listing…" />;
   if (error)
     return (
       <div className="page-error">
