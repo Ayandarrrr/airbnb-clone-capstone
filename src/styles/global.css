@@ -170,7 +170,7 @@ input, select, textarea { font-family: inherit; }
 }
 .hero-banner::before {
   content: ""; position: absolute; inset: 0;
-  background: url('/images/trip-activity.jpg') center/cover no-repeat;
+  background-color: rgba(0,0,0,0.15);
   opacity: 0.25;
 }
 .hero-content { position: relative; z-index: 1; color: #fff; max-width: 600px; }
