@@ -75,3 +75,12 @@ const accommodationSchema = new mongoose.Schema(
 accommodationSchema.index({ title: "text", location: "text", description: "text" });
 
 module.exports = mongoose.model("Accommodation", accommodationSchema);
+
+// Virtual: derived average rating label
+accommodationSchema.virtual("ratingLabel").get(function () {
+  if (this.rating >= 4.8) return "Exceptional";
+  if (this.rating >= 4.5) return "Wonderful";
+  if (this.rating >= 4.0) return "Very good";
+  if (this.rating >= 3.5) return "Good";
+  return "Okay";
+});
