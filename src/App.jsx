@@ -22,7 +22,9 @@ import CreateListingPage from "./pages/admin/CreateListingPage";
 import ViewListingsPage from "./pages/admin/ViewListingsPage";
 import UpdateListingPage from "./pages/admin/UpdateListingPage";
 
+import NotFoundPage from "./pages/NotFoundPage";
 // Global styles
+import "./styles/global.css";
 import "./styles/global.css";
 
 function App() {
@@ -81,6 +83,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
         {/* Footer always visible */}
