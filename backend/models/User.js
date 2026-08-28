@@ -55,3 +55,8 @@ userSchema.methods.comparePassword = async function (candidate) {
 };
 
 module.exports = mongoose.model("User", userSchema);
+
+// Virtual: full profile URL (useful for future avatar feature)
+userSchema.virtual("profileUrl").get(function () {
+  return `/api/users/${this._id}/profile`;
+});
