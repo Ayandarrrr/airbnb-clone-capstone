@@ -7,6 +7,8 @@ const cors     = require("cors");
 const mongoose = require("mongoose");
 const path     = require("path");
 
+const errorHandler = require("./middleware/errorHandler");
+
 // ── Route imports ─────────────────────────────────────────
 const userRoutes          = require("./routes/userRoutes");
 const accommodationRoutes = require("./routes/accommodationRoutes");
@@ -50,14 +52,8 @@ app.use((_req, res) => {
   res.status(404).json({ message: "Route not found." });
 });
 
-// ── Global error handler ─────────────────────────────────
-// eslint-disable-next-line no-unused-vars
-app.use((err, _req, res, _next) => {
-  console.error("Unhandled error:", err);
-  const status  = err.statusCode || 500;
-  const message = err.message    || "Internal server error.";
-  res.status(status).json({ message });
-});
+// ── Global error handler (uses centralised errorHandler) ──
+app.use(errorHandler);
 
 // ── MongoDB connection + server start ─────────────────────
 const connectDB = async () => {
