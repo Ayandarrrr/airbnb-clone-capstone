@@ -14,6 +14,7 @@ import LocationDetailsPage from "./pages/LocationDetailsPage";
 
 // Auth pages
 import LoginPage from "./pages/LoginPage";
+import ReservationsPage from "./pages/ReservationsPage";
 
 // Admin pages
 import AdminDashboard from "./pages/admin/AdminDashboard";
@@ -38,6 +39,14 @@ function App() {
           <Route path="/locations/:locationName" element={<LocationPage />} />
           <Route path="/listing/:id" element={<LocationDetailsPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route
+            path="/reservations"
+            element={
+              <ProtectedRoute>
+                <ReservationsPage />
+              </ProtectedRoute>
+            }
+          />
 
           {/* ── Protected admin routes ── */}
           <Route

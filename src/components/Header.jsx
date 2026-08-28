@@ -66,7 +66,7 @@ function Header() {
             {dropdownOpen && (
               <div className="dropdown-menu" role="menu">
                 <Link
-                  to="/admin/listings"
+                  to="/reservations"
                   className="dropdown-item"
                   role="menuitem"
                   onClick={() => setDropdownOpen(false)}

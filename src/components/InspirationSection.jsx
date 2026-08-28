@@ -10,7 +10,7 @@ const destinations = [
 
 function InspirationSection() {
   return (
-    <section className="inspiration-section">
+    <section className="inspiration-section" id="inspiration">
       <h2>Inspiration for your next trip</h2>
       <div className="card-grid">
         {destinations.map((dest) => (

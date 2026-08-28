@@ -1,17 +1,39 @@
 // src/components/ExperiencesSection.jsx
+// "Discover Airbnb Experiences" section — two cards with background images.
+// Background images applied via inline style so CRA does not try to
+// resolve them at build time (they live in public/images/).
 function ExperiencesSection() {
+  const cards = [
+    {
+      title: "Things to do on your trip",
+      btn:   "Explore experiences",
+      img:   "/images/trip-activity.jpg",
+    },
+    {
+      title: "Things to do at home",
+      btn:   "Explore online experiences",
+      img:   "/images/home-activity.jpg",
+    },
+  ];
+
   return (
     <section className="experiences-section">
       <h2>Discover Airbnb Experiences</h2>
       <div className="experiences-grid">
-        <div className="experience-card" style={{ backgroundImage: "url(/images/trip-activity.jpg)" }}>
-          <h3>Things to do on your trip</h3>
-          <button>Explore experiences</button>
-        </div>
-        <div className="experience-card" style={{ backgroundImage: "url(/images/home-activity.jpg)" }}>
-          <h3>Things to do at home</h3>
-          <button>Explore online experiences</button>
-        </div>
+        {cards.map(({ title, btn, img }) => (
+          <div
+            key={title}
+            className="experience-card"
+            style={{
+              backgroundImage: `url(${img})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <h3>{title}</h3>
+            <button>{btn}</button>
+          </div>
+        ))}
       </div>
     </section>
   );
