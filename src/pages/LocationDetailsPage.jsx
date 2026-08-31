@@ -16,9 +16,9 @@ function nightsBetween(checkIn, checkOut) {
   return Math.max(0, Math.floor(ms / (1000 * 60 * 60 * 24)));
 }
 
-/** Format a number as USD currency string. */
+/** Format a number as Rand currency string. */
 function usd(amount) {
-  return `$${Number(amount).toFixed(2)}`;
+  return `R${Number(amount).toFixed(2)}`;
 }
 
 // ── sub-components ────────────────────────────────────────────────────────────

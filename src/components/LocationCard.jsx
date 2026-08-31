@@ -39,7 +39,7 @@ function LocationCard({ listing }) {
             <span className="location-card-reviews"> ({listing.reviews} reviews)</span>
           </span>
           <span className="location-card-price">
-            <strong>${listing.price}</strong> / night
+            <strong>R{listing.price}</strong> / night
           </span>
         </div>
       </div>

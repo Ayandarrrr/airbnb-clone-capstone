@@ -1,0 +1,10 @@
+[33me82a594[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfrontend[m[33m, [m[1;31morigin/frontend[m[33m)[m added a backend
+[33med62972[m feat(backend): add coloured request logger middleware (dev only)
+[33m3dd4f0f[m feat(backend): extract centralised error handler middleware
+[33mf48a6c2[m feat(backend): add full-text search endpoint GET /api/accommodations/search
+[33m6d9357f[m feat(Accommodation model): add ratingLabel virtual field
+[33me4ffd9a[m feat(User model): add profileUrl virtual field
+[33m46f212d[m feat(LocationCard): add bedroom/bathroom/guest specs and review count
+[33mbfc5108[m feat(ux): add ScrollToTop component — scrolls to top on route change
+[33m743dbb0[m feat: add 404 NotFoundPage with home link and catch-all route
+[33mc0df175[m refactor(details): replace loading div with Spinner component
