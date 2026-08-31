@@ -1,5 +1,5 @@
 // src/components/Header.jsx
-// Top header: Airbnb logo, location filter, and profile/auth section.
+// Top header: Tina Stays logo, location filter, and profile/auth section.
 // Adapts between logged-in and logged-out states using AuthContext.
 import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -32,11 +32,11 @@ function Header() {
   return (
     <header className="site-header">
       {/* Logo */}
-      <Link to="/" className="logo" aria-label="Airbnb home">
+      <Link to="/" className="logo" aria-label="Tina Stays home">
         <svg viewBox="0 0 32 32" className="logo-icon" aria-hidden="true">
           <path d="M16 1C10.925 1 7 6.375 7 12.5c0 3.675 1.8 7.05 4.675 9.475L16 31l4.325-9.025C23.2 19.55 25 16.175 25 12.5 25 6.375 21.075 1 16 1zm0 16.5c-2.762 0-5-2.238-5-5s2.238-5 5-5 5 2.238 5 5-2.238 5-5 5z" />
         </svg>
-        <span className="logo-text">airbnb</span>
+        <span className="logo-text">Tina Stays</span>
       </Link>
 
       {/* Location search / filter */}

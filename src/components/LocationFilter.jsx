@@ -5,7 +5,7 @@
 // so accessing locationName is always safe.
 import { useNavigate, useParams } from "react-router-dom";
 
-const locations = ["New York", "Cape Town", "Bali", "Paris"];
+const locations = ["Johannesburg", "Cape Town", "Durban", "Pretoria"];
 
 function LocationFilter() {
   const navigate = useNavigate();

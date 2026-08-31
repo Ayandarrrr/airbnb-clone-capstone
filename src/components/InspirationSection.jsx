@@ -2,10 +2,10 @@
 import { Link } from "react-router-dom";
 
 const destinations = [
-  { name: "New York", image: "/images/new-york.jpg", info: "3.5 hours away" },
-  { name: "Cape Town", image: "/images/cape-town.jpg", info: "1 hour away" },
-  { name: "Bali", image: "/images/bali.jpg", info: "8 hours away" },
-  { name: "Paris", image: "/images/paris.jpg", info: "11 hours away" },
+  { name: "Johannesburg", image: "/images/johannesburg.jpg", info: "The City of Gold" },
+  { name: "Cape Town", image: "/images/cape-town.jpg", info: "Table Mountain & beaches" },
+  { name: "Durban", image: "/images/durban.jpg", info: "Sun, surf & curry" },
+  { name: "Pretoria", image: "/images/pretoria.jpg", info: "Jacaranda City" },
 ];
 
 function InspirationSection() {
