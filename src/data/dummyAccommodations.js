@@ -2,12 +2,16 @@
 // Full dummy data matching the recommended reservation data structure from the brief.
 // Used as offline fallback when the backend is not available.
 // 6 listings per city: Johannesburg, Cape Town, Durban, Pretoria.
+// Images: 5 unique placeholder photos per listing (via Picsum), simulating a room gallery.
+
+const galleryImages = (id) =>
+  [1, 2, 3, 4, 5].map((n) => `https://picsum.photos/seed/listing${id}-${n}/800/600`);
 
 const accommodations = [
   // ── JOHANNESBURG (6) ──────────────────────────────────────────────
   {
     id: 1,
-    images: Array(5).fill("/images/johannesburg-1.jpg"),
+    images: galleryImages(1),
     type: "Entire apartment",
     location: "Johannesburg",
     guests: 4,
@@ -33,7 +37,7 @@ const accommodations = [
   },
   {
     id: 2,
-    images: Array(5).fill("/images/johannesburg-2.jpg"),
+    images: galleryImages(2),
     type: "Entire apartment",
     location: "Johannesburg",
     guests: 3,
@@ -59,7 +63,7 @@ const accommodations = [
   },
   {
     id: 3,
-    images: Array(5).fill("/images/johannesburg-3.jpg"),
+    images: galleryImages(3),
     type: "Entire house",
     location: "Johannesburg",
     guests: 6,
@@ -82,7 +86,7 @@ const accommodations = [
   },
   {
     id: 4,
-    images: Array(5).fill("/images/johannesburg-4.jpg"),
+    images: galleryImages(4),
     type: "Private room",
     location: "Johannesburg",
     guests: 2,
@@ -105,7 +109,7 @@ const accommodations = [
   },
   {
     id: 5,
-    images: Array(5).fill("/images/johannesburg-5.jpg"),
+    images: galleryImages(5),
     type: "Entire loft",
     location: "Johannesburg",
     guests: 2,
@@ -128,7 +132,7 @@ const accommodations = [
   },
   {
     id: 6,
-    images: Array(5).fill("/images/johannesburg-6.jpg"),
+    images: galleryImages(6),
     type: "Entire apartment",
     location: "Johannesburg",
     guests: 5,
@@ -153,7 +157,7 @@ const accommodations = [
   // ── CAPE TOWN (6) ─────────────────────────────────────────────────
   {
     id: 7,
-    images: Array(5).fill("/images/cape-town-1.jpg"),
+    images: galleryImages(7),
     type: "Entire house",
     location: "Cape Town",
     guests: 6,
@@ -179,7 +183,7 @@ const accommodations = [
   },
   {
     id: 8,
-    images: Array(5).fill("/images/cape-town-2.jpg"),
+    images: galleryImages(8),
     type: "Entire apartment",
     location: "Cape Town",
     guests: 4,
@@ -202,7 +206,7 @@ const accommodations = [
   },
   {
     id: 9,
-    images: Array(5).fill("/images/cape-town-3.jpg"),
+    images: galleryImages(9),
     type: "Entire villa",
     location: "Cape Town",
     guests: 8,
@@ -225,7 +229,7 @@ const accommodations = [
   },
   {
     id: 10,
-    images: Array(5).fill("/images/cape-town-4.jpg"),
+    images: galleryImages(10),
     type: "Private room",
     location: "Cape Town",
     guests: 2,
@@ -248,7 +252,7 @@ const accommodations = [
   },
   {
     id: 11,
-    images: Array(5).fill("/images/cape-town-5.jpg"),
+    images: galleryImages(11),
     type: "Entire apartment",
     location: "Cape Town",
     guests: 3,
@@ -271,7 +275,7 @@ const accommodations = [
   },
   {
     id: 12,
-    images: Array(5).fill("/images/cape-town-6.jpg"),
+    images: galleryImages(12),
     type: "Entire cottage",
     location: "Cape Town",
     guests: 4,
@@ -296,7 +300,7 @@ const accommodations = [
   // ── DURBAN (6) ────────────────────────────────────────────────────
   {
     id: 13,
-    images: Array(5).fill("/images/durban-1.jpg"),
+    images: galleryImages(13),
     type: "Entire loft",
     location: "Durban",
     guests: 2,
@@ -322,7 +326,7 @@ const accommodations = [
   },
   {
     id: 14,
-    images: Array(5).fill("/images/durban-2.jpg"),
+    images: galleryImages(14),
     type: "Entire apartment",
     location: "Durban",
     guests: 4,
@@ -345,7 +349,7 @@ const accommodations = [
   },
   {
     id: 15,
-    images: Array(5).fill("/images/durban-3.jpg"),
+    images: galleryImages(15),
     type: "Entire house",
     location: "Durban",
     guests: 7,
@@ -368,7 +372,7 @@ const accommodations = [
   },
   {
     id: 16,
-    images: Array(5).fill("/images/durban-4.jpg"),
+    images: galleryImages(16),
     type: "Private room",
     location: "Durban",
     guests: 2,
@@ -391,7 +395,7 @@ const accommodations = [
   },
   {
     id: 17,
-    images: Array(5).fill("/images/durban-5.jpg"),
+    images: galleryImages(17),
     type: "Entire villa",
     location: "Durban",
     guests: 8,
@@ -414,7 +418,7 @@ const accommodations = [
   },
   {
     id: 18,
-    images: Array(5).fill("/images/durban-6.jpg"),
+    images: galleryImages(18),
     type: "Entire apartment",
     location: "Durban",
     guests: 3,
@@ -439,7 +443,7 @@ const accommodations = [
   // ── PRETORIA (6) ──────────────────────────────────────────────────
   {
     id: 19,
-    images: Array(5).fill("/images/pretoria-1.jpg"),
+    images: galleryImages(19),
     type: "Entire villa",
     location: "Pretoria",
     guests: 8,
@@ -465,7 +469,7 @@ const accommodations = [
   },
   {
     id: 20,
-    images: Array(5).fill("/images/pretoria-2.jpg"),
+    images: galleryImages(20),
     type: "Entire apartment",
     location: "Pretoria",
     guests: 3,
@@ -488,7 +492,7 @@ const accommodations = [
   },
   {
     id: 21,
-    images: Array(5).fill("/images/pretoria-3.jpg"),
+    images: galleryImages(21),
     type: "Entire house",
     location: "Pretoria",
     guests: 6,
@@ -511,7 +515,7 @@ const accommodations = [
   },
   {
     id: 22,
-    images: Array(5).fill("/images/pretoria-4.jpg"),
+    images: galleryImages(22),
     type: "Private room",
     location: "Pretoria",
     guests: 2,
@@ -534,7 +538,7 @@ const accommodations = [
   },
   {
     id: 23,
-    images: Array(5).fill("/images/pretoria-5.jpg"),
+    images: galleryImages(23),
     type: "Entire apartment",
     location: "Pretoria",
     guests: 4,
@@ -557,7 +561,7 @@ const accommodations = [
   },
   {
     id: 24,
-    images: Array(5).fill("/images/pretoria-6.jpg"),
+    images: galleryImages(24),
     type: "Entire cottage",
     location: "Pretoria",
     guests: 3,
