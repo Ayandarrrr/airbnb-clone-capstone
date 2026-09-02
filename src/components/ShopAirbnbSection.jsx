@@ -7,7 +7,10 @@ function ShopAirbnbSection() {
         <button>Shop now</button>
       </div>
       <div className="shop-image">
-        <img src="/images/gift-cards.jpg" alt="Airbnb gift cards" />
+        <img
+          src="https://picsum.photos/seed/gift-cards/800/600"
+          alt="Airbnb gift cards"
+        />
       </div>
     </section>
   );

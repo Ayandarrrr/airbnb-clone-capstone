@@ -1,18 +1,16 @@
 // src/components/ExperiencesSection.jsx
 // "Discover Airbnb Experiences" section — two cards with background images.
-// Background images applied via inline style so CRA does not try to
-// resolve them at build time (they live in public/images/).
 function ExperiencesSection() {
   const cards = [
     {
       title: "Things to do on your trip",
-      btn:   "Explore experiences",
-      img:   "/images/trip-activity.jpg",
+      btn: "Explore experiences",
+      img: "https://picsum.photos/seed/trip-activity/800/600",
     },
     {
       title: "Things to do at home",
-      btn:   "Explore online experiences",
-      img:   "/images/home-activity.jpg",
+      btn: "Explore online experiences",
+      img: "https://picsum.photos/seed/home-activity/800/600",
     },
   ];
 
