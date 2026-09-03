@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const tabs = ["Popular", "Trending", "Available this weekend"];
-const listItems = ["New York", "Cape Town", "Bali", "Lisbon", "Tokyo"];
+const listItems = ["Johannesburg", "Cape Town", "Durban", "Pretoria"];
 
 function GetawaysSection() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
