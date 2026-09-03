@@ -157,7 +157,7 @@ function ViewListingsPage() {
                     <td className="listing-title-cell">{listing.title}</td>
                     <td>{listing.location}</td>
                     <td>{listing.type}</td>
-                    <td><strong>${listing.price}</strong></td>
+                    <td><strong>R{listing.price}</strong></td>
                     <td>
                       <div className="listing-actions">
                         <Link

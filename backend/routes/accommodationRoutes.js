@@ -9,15 +9,11 @@ const {
   createAccommodation,
   updateAccommodation,
   deleteAccommodation,
-  searchAccommodations,
 } = require("../controllers/accommodationController");
 const { protect } = require("../middleware/auth");
 
 // GET    /api/accommodations        — list all (public, supports ?location= filter)
 router.get("/", getAllAccommodations);
-
-// GET    /api/accommodations/search — full-text search (public)
-router.get("/search", searchAccommodations);
 
 // GET    /api/accommodations/:id    — single listing (public)
 router.get("/:id", getAccommodationById);

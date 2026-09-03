@@ -243,7 +243,7 @@ function CreateListingPage() {
               <input id="guests" name="guests" type="number" min="1" value={form.guests}
                 onChange={handleChange} className={errors.guests ? "input-error" : ""} />
             </Field>
-            <Field id="price" label="Price per Night ($) *" error={errors.price}>
+            <Field id="price" label="Price per Night (R) *" error={errors.price}>
               <input id="price" name="price" type="number" min="0" step="0.01" value={form.price}
                 onChange={handleChange} className={errors.price ? "input-error" : ""} />
             </Field>
@@ -256,7 +256,7 @@ function CreateListingPage() {
                 value={form.weeklyDiscount} onChange={handleChange}
                 className={errors.weeklyDiscount ? "input-error" : ""} />
             </Field>
-            <Field id="cleaningFee" label="Cleaning Fee ($)" error={errors.cleaningFee}>
+            <Field id="cleaningFee" label="Cleaning Fee (R)" error={errors.cleaningFee}>
               <input id="cleaningFee" name="cleaningFee" type="number" min="0" step="0.01"
                 value={form.cleaningFee} onChange={handleChange}
                 className={errors.cleaningFee ? "input-error" : ""} />
@@ -264,12 +264,12 @@ function CreateListingPage() {
           </div>
 
           <div className="form-row">
-            <Field id="serviceFee" label="Service Fee ($)" error={errors.serviceFee}>
+            <Field id="serviceFee" label="Service Fee (R)" error={errors.serviceFee}>
               <input id="serviceFee" name="serviceFee" type="number" min="0" step="0.01"
                 value={form.serviceFee} onChange={handleChange}
                 className={errors.serviceFee ? "input-error" : ""} />
             </Field>
-            <Field id="occupancyTaxes" label="Occupancy Taxes ($)" error={errors.occupancyTaxes}>
+            <Field id="occupancyTaxes" label="Occupancy Taxes (R)" error={errors.occupancyTaxes}>
               <input id="occupancyTaxes" name="occupancyTaxes" type="number" min="0" step="0.01"
                 value={form.occupancyTaxes} onChange={handleChange}
                 className={errors.occupancyTaxes ? "input-error" : ""} />
