@@ -239,7 +239,7 @@ function ReservationsPage() {
                     <td style={{ textAlign: "center" }}>{r.guests}</td>
                     <td>
                       <strong>
-                        ${Number(r.totalPrice || 0).toFixed(2)}
+                        R{Number(r.totalPrice || 0).toFixed(2)}
                       </strong>
                     </td>
                     <td>

@@ -347,9 +347,28 @@ function LocationDetailsPage() {
           </div>
           <hr />
 
+          {/* 7 nights in [location] — per brief requirement */}
+          <div className="listing-nights">
+            <h3>7 nights in {listing.location}</h3>
+            <div className="nights-dates">
+              <div className="nights-date-box">
+                <span className="nights-date-label">Check-in</span>
+                <span className="nights-date-value">Select date</span>
+              </div>
+              <span className="nights-arrow" aria-hidden="true">→</span>
+              <div className="nights-date-box">
+                <span className="nights-date-label">Checkout</span>
+                <span className="nights-date-value">Select date</span>
+              </div>
+            </div>
+            <p style={{ fontSize: "0.88rem", color: "var(--text-muted)", marginTop: 10 }}>
+              Use the cost calculator on the right to pick your exact dates.
+            </p>
+          </div>
+          <hr />
+
           {/* Reviews */}
-          <div className="listing-reviews-section">
-            <h3>
+          <div className="listing-reviews-section">            <h3>
               <Stars rating={listing.rating} /> · {listing.reviews} reviews
             </h3>
             {listing.specificRatings && (
