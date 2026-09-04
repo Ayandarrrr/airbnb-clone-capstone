@@ -24,11 +24,8 @@ function ShopAirbnbSection() {
       {/* ── Right: gift card image ── */}
       <div className="shop-image">
         <img
-          src="/images/gift-cards.jpg"
+          src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=800&q=80"
           alt="Tina Stays gift cards"
-          onError={(e) => {
-            e.target.src = "https://picsum.photos/seed/gift-cards/800/600";
-          }}
         />
       </div>
     </section>

@@ -9,14 +9,12 @@ function ExperiencesSection() {
     {
       title: "Things to do on your trip",
       btn:   "Explore experiences",
-      img:   "/images/trip-activity.jpg",
-      fallback: "https://picsum.photos/seed/trip-activity/800/600",
+      img:   "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&q=80", // travel/trip
     },
     {
       title: "Things to do at home",
       btn:   "Explore online experiences",
-      img:   "/images/home-activity.jpg",
-      fallback: "https://picsum.photos/seed/home-activity/800/600",
+      img:   "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80", // cosy home
     },
   ];
 
@@ -32,7 +30,7 @@ function ExperiencesSection() {
             key={title}
             className="experience-card"
             style={{
-              backgroundImage: `url(${img}), url(${fallback})`,
+              backgroundImage: `url(${img})`,
               backgroundSize:     "cover",
               backgroundPosition: "center",
             }}

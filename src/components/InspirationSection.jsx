@@ -10,22 +10,22 @@ const destinations = [
   {
     name:  "Johannesburg",
     info:  "The City of Gold",
-    image: "/images/new-york.jpg",   // closest available local image
+    image: "https://images.unsplash.com/photo-1577948000111-9c970dfe3743?w=800&q=80",  // JHB skyline
   },
   {
     name:  "Cape Town",
     info:  "Table Mountain & beaches",
-    image: "/images/cape-town.jpg",
+    image: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?w=800&q=80",  // Cape Town
   },
   {
     name:  "Durban",
     info:  "Sun, surf & curry",
-    image: "/images/bali.jpg",
+    image: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&q=80",  // Durban beachfront
   },
   {
     name:  "Pretoria",
     info:  "Jacaranda City",
-    image: "/images/paris.jpg",
+    image: "https://images.unsplash.com/photo-1648217304059-7f8e8a23f2c2?w=800&q=80",  // Pretoria buildings
   },
 ];
 
@@ -44,10 +44,6 @@ function InspirationSection() {
             <img
               src={dest.image}
               alt={`${dest.name} landscape`}
-              onError={(e) => {
-                // Graceful image fallback if local file is missing
-                e.target.src = `https://picsum.photos/seed/${dest.name}/800/600`;
-              }}
             />
             <h3>{dest.name}</h3>
             <p>{dest.info}</p>

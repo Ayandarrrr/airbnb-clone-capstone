@@ -25,7 +25,7 @@ function HeroBanner() {
       aria-label="Hero banner — find your next stay"
       style={{
         backgroundImage:
-          "linear-gradient(135deg, rgba(255,56,92,0.85) 0%, rgba(227,28,95,0.80) 50%, rgba(252,100,45,0.85) 100%), url('/images/trip-activity.jpg')",
+          "linear-gradient(135deg, rgba(255,56,92,0.80) 0%, rgba(227,28,95,0.75) 50%, rgba(252,100,45,0.80) 100%), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1600&q=80')",
         backgroundSize:     "cover",
         backgroundPosition: "center",
       }}
