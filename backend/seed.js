@@ -14,6 +14,12 @@ const Accommodation = require("./models/Accommodation");
 
 const users = [
   {
+    username: "Admin User",
+    email:    "admin@example.com",
+    password: "admin123",
+    role:     "admin",
+  },
+  {
     username: "Jane Doe",
     email:    "jane@example.com",
     password: "password321",
@@ -171,6 +177,7 @@ async function seed() {
     console.log(`✓ Seeded ${createdAccs.length} accommodations.`);
 
     console.log("\n── Login credentials ──────────────────────────");
+    console.log("  Admin : admin@example.com / admin123");
     console.log("  Host  : jane@example.com  / password321");
     console.log("  User  : john@example.com  / password123");
     console.log("───────────────────────────────────────────────\n");
