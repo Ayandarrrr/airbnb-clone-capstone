@@ -859,3 +859,40 @@ label.btn-secondary:hover { background: var(--bg-light); }
     justify-content: center;
   }
 }
+
+/* ── Getaways Section: destination links ──────────────────── */
+.getaway-link {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: #fff;
+  transition: background .15s, box-shadow .15s, border-color .15s;
+  text-decoration: none;
+  color: inherit;
+}
+.getaway-link:hover {
+  background: #fff0f2;
+  border-color: var(--brand);
+  box-shadow: var(--shadow-sm);
+}
+.getaway-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+.getaway-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+/* Override default list item padding for getaways */
+.getaways-list li {
+  padding: 0;
+  border: none;
+  background: none;
+}
+.getaways-list li:hover {
+  background: none;
+}

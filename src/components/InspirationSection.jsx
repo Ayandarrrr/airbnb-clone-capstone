@@ -1,21 +1,54 @@
 // src/components/InspirationSection.jsx
+// "Inspiration for your next trip" section with location cards.
+// Per brief: "Inspiration for your next trip (with location cards)".
+// Cards link directly to the corresponding Location Page.
+// Uses local images from /public/images where available,
+// with picsum fallbacks so the section always looks populated.
 import { Link } from "react-router-dom";
 
 const destinations = [
-  { name: "Johannesburg", image: "https://picsum.photos/seed/property1/800/600", info: "The City of Gold" },
-  { name: "Cape Town", image: "https://picsum.photos/seed/property3/800/600", info: "Table Mountain & beaches" },
-  { name: "Durban", image: "https://picsum.photos/seed/property5/800/600", info: "Sun, surf & curry" },
-  { name: "Pretoria", image: "https://picsum.photos/seed/property7/800/600", info: "Jacaranda City" },
+  {
+    name:  "Johannesburg",
+    info:  "The City of Gold",
+    image: "/images/new-york.jpg",   // closest available local image
+  },
+  {
+    name:  "Cape Town",
+    info:  "Table Mountain & beaches",
+    image: "/images/cape-town.jpg",
+  },
+  {
+    name:  "Durban",
+    info:  "Sun, surf & curry",
+    image: "/images/bali.jpg",
+  },
+  {
+    name:  "Pretoria",
+    info:  "Jacaranda City",
+    image: "/images/paris.jpg",
+  },
 ];
 
 function InspirationSection() {
   return (
-    <section className="inspiration-section" id="inspiration">
-      <h2>Inspiration for your next trip</h2>
+    <section className="inspiration-section" id="inspiration" aria-labelledby="inspiration-heading">
+      <h2 id="inspiration-heading">Inspiration for your next trip</h2>
       <div className="card-grid">
         {destinations.map((dest) => (
-          <Link to={`/locations/${dest.name}`} key={dest.name} className="dest-card">
-            <img src={dest.image} alt={dest.name} />
+          <Link
+            to={`/locations/${encodeURIComponent(dest.name)}`}
+            key={dest.name}
+            className="dest-card"
+            aria-label={`Explore stays in ${dest.name}`}
+          >
+            <img
+              src={dest.image}
+              alt={`${dest.name} landscape`}
+              onError={(e) => {
+                // Graceful image fallback if local file is missing
+                e.target.src = `https://picsum.photos/seed/${dest.name}/800/600`;
+              }}
+            />
             <h3>{dest.name}</h3>
             <p>{dest.info}</p>
           </Link>
