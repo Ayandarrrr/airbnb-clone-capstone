@@ -23,10 +23,27 @@ const PORT = process.env.PORT || 5000;
 // CORS — allow the React dev server (port 3000) and any deployed origin
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      process.env.CLIENT_URL,        // set in .env for production
-    ].filter(Boolean),
+    origin: function (origin, callback) {
+      // Allow requests with no origin (mobile apps, curl, Postman)
+      if (!origin) return callback(null, true);
+
+      const allowed = [
+        "http://localhost:3000",
+        process.env.CLIENT_URL,
+      ].filter(Boolean);
+
+      // Also allow any onrender.com subdomain for Render deployments
+      if (
+        allowed.includes(origin) ||
+        origin.endsWith(".onrender.com") ||
+        origin.endsWith(".netlify.app") ||
+        origin.endsWith(".vercel.app")
+      ) {
+        return callback(null, true);
+      }
+
+      return callback(new Error(`CORS: origin ${origin} not allowed`), false);
+    },
     credentials: true,
   })
 );
