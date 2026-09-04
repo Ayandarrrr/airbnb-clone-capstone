@@ -805,3 +805,57 @@ input, select, textarea { font-family: inherit; }
   margin-bottom: 24px;
 }
 .back-btn:hover { background: var(--bg-light); box-shadow: var(--shadow-sm); }
+
+/* ── Social Link (footer) ─────────────────────────────────── */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  transition: color .2s, border-color .2s, background .2s;
+  text-decoration: none;
+}
+.social-link:hover {
+  color: var(--brand);
+  border-color: var(--brand);
+  background: #fff0f2;
+}
+
+/* ── Upload label button ──────────────────────────────────── */
+label.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: #fff;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background .2s;
+  user-select: none;
+}
+label.btn-secondary:hover { background: var(--bg-light); }
+
+/* ── Admin form success message ───────────────────────────── */
+.admin-form .form-success {
+  margin-bottom: 20px;
+}
+
+/* ── Responsive: footer bottom wraps on mobile ────────────── */
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+  .footer-social {
+    justify-content: center;
+  }
+}

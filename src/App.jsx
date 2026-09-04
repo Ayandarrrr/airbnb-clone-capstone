@@ -24,8 +24,7 @@ import UpdateListingPage from "./pages/admin/UpdateListingPage";
 
 import ScrollToTop from "./components/ScrollToTop";
 import NotFoundPage from "./pages/NotFoundPage";
-// Global styles
-import "./styles/global.css";
+// Global styles — imported once
 import "./styles/global.css";
 
 function App() {

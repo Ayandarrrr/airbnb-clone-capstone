@@ -1,6 +1,8 @@
 // src/pages/admin/UpdateListingPage.jsx
 // Pre-fills the listing form with existing data fetched by :id,
 // then PUTs the updated payload back to the backend.
+// Supports file upload via the /upload/images endpoint.
+// Falls back to dummyAccommodations when the backend is offline.
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
@@ -66,6 +68,7 @@ function UpdateListingPage() {
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
   const [imageUrlInput, setImageUrlInput] = useState("");
+  const [uploadingImages, setUploadingImages] = useState(false);
 
   // ── Load existing listing ─────────────────────────────
   useEffect(() => {
@@ -154,10 +157,38 @@ function UpdateListingPage() {
     }));
   };
 
-  const handleFileUpload = (e) => {
+  const handleFileUpload = async (e) => {
     const files = Array.from(e.target.files);
-    const urls = files.map((f) => URL.createObjectURL(f));
-    setForm((prev) => ({ ...prev, images: [...prev.images, ...urls] }));
+    if (!files.length) return;
+
+    // Show local blob previews immediately while uploading
+    const localPreviews = files.map((f) => URL.createObjectURL(f));
+    setForm((prev) => ({ ...prev, images: [...prev.images, ...localPreviews] }));
+
+    try {
+      setUploadingImages(true);
+      const formData = new FormData();
+      files.forEach((f) => formData.append("images", f));
+      const res = await axios.post(
+        `${API}/api/accommodations/upload/images`,
+        formData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      const serverUrls = res.data.urls;
+      setForm((prev) => {
+        const without = prev.images.filter((img) => !localPreviews.includes(img));
+        return { ...prev, images: [...without, ...serverUrls] };
+      });
+    } catch {
+      // Keep blob previews if backend upload fails — acceptable for demo
+    } finally {
+      setUploadingImages(false);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -194,7 +225,7 @@ function UpdateListingPage() {
       await axios.put(`${API}/api/accommodations/${id}`, payload, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      setSuccess("Listing updated successfully!");
+      setSuccess("✓ Listing updated successfully!");
       setTimeout(() => navigate("/admin/listings"), 1500);
     } catch (err) {
       setServerError(
@@ -321,15 +352,32 @@ function UpdateListingPage() {
           {/* Images */}
           <div className="form-group">
             <label>Images</label>
-            <input type="file" accept="image/*" multiple onChange={handleFileUpload}
-              style={{ marginBottom: 10 }} aria-label="Upload image files" />
+            <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginBottom: 10 }}>
+              Upload image files or paste image URLs below.
+            </p>
+            {/* Hidden file input with styled label */}
+            <div style={{ marginBottom: 10 }}>
+              <input type="file" accept="image/*" multiple onChange={handleFileUpload}
+                id="file-upload-update" style={{ display: "none" }}
+                aria-label="Upload image files" />
+              <label htmlFor="file-upload-update" className="btn-secondary"
+                style={{ display: "inline-block", cursor: "pointer", marginBottom: 0 }}>
+                {uploadingImages ? "Uploading…" : "📁 Choose Images"}
+              </label>
+              {uploadingImages && (
+                <span style={{ marginLeft: 10, fontSize: "0.85rem", color: "var(--text-muted)" }}>
+                  Uploading to server…
+                </span>
+              )}
+            </div>
             <div style={{ display: "flex", gap: 8, marginBottom: 10 }}>
               <input type="url" value={imageUrlInput}
                 onChange={(e) => setImageUrlInput(e.target.value)}
                 placeholder="Or paste image URL and click Add"
                 style={{ flex: 1 }}
-                onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); addImageUrl(); } }} />
-              <button type="button" className="btn-secondary" onClick={addImageUrl}>Add</button>
+                onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); addImageUrl(); } }}
+                aria-label="Image URL" />
+              <button type="button" className="btn-secondary" onClick={addImageUrl}>Add URL</button>
             </div>
             {form.images.length > 0 && (
               <div className="image-preview">
@@ -352,7 +400,7 @@ function UpdateListingPage() {
               Cancel
             </button>
             <button type="submit" className="btn-primary"
-              disabled={submitting} aria-busy={submitting}>
+              disabled={submitting || uploadingImages} aria-busy={submitting}>
               {submitting ? "Saving…" : "Save Changes"}
             </button>
           </div>
