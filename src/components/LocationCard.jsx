@@ -35,7 +35,7 @@ function LocationCard({ listing }) {
 
         <div className="location-card-meta">
           <span className="location-card-rating">
-            ⭐ <strong>{listing.rating}</strong>
+            <strong>{listing.rating}</strong>
             <span className="location-card-reviews"> ({listing.reviews} reviews)</span>
           </span>
           <span className="location-card-price">

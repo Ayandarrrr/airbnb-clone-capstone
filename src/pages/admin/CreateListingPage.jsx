@@ -188,7 +188,7 @@ function CreateListingPage() {
       await axios.post(`${API}/api/accommodations`, payload, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      setSuccess("✓ Listing created successfully!");
+      setSuccess("Listing created successfully!");
       setForm(EMPTY_FORM);
       setImageUrlInput("");
       setTimeout(() => navigate("/admin/listings"), 1500);
@@ -326,7 +326,7 @@ function CreateListingPage() {
                 style={{ display: "none" }} />
               <label htmlFor="file-upload" className="btn-secondary"
                 style={{ display: "inline-block", cursor: "pointer", marginBottom: 0 }}>
-                {uploadingImages ? "Uploading…" : "📁 Choose Images"}
+                {uploadingImages ? "Uploading..." : "Choose Images"}
               </label>
               {uploadingImages && (
                 <span style={{ marginLeft: 10, fontSize: "0.85rem", color: "var(--text-muted)" }}>

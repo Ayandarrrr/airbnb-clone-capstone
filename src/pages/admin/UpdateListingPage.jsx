@@ -225,7 +225,7 @@ function UpdateListingPage() {
       await axios.put(`${API}/api/accommodations/${id}`, payload, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      setSuccess("✓ Listing updated successfully!");
+      setSuccess("Listing updated successfully!");
       setTimeout(() => navigate("/admin/listings"), 1500);
     } catch (err) {
       setServerError(
@@ -362,7 +362,7 @@ function UpdateListingPage() {
                 aria-label="Upload image files" />
               <label htmlFor="file-upload-update" className="btn-secondary"
                 style={{ display: "inline-block", cursor: "pointer", marginBottom: 0 }}>
-                {uploadingImages ? "Uploading…" : "📁 Choose Images"}
+                {uploadingImages ? "Uploading..." : "Choose Images"}
               </label>
               {uploadingImages && (
                 <span style={{ marginLeft: 10, fontSize: "0.85rem", color: "var(--text-muted)" }}>

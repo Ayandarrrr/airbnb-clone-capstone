@@ -107,9 +107,9 @@ function Footer() {
         {/* Language / currency selectors */}
         <div className="footer-selectors">
           <select aria-label="Select language" title="Language">
-            <option>🌐 English (US)</option>
-            <option>🌐 Afrikaans</option>
-            <option>🌐 Zulu</option>
+            <option>English (US)</option>
+            <option>Afrikaans</option>
+            <option>Zulu</option>
           </select>
           <select aria-label="Select currency" title="Currency">
             <option>ZAR R</option>

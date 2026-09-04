@@ -85,7 +85,7 @@ function LocationPage() {
             ))
           ) : (
             <div style={{ padding: "60px 0", textAlign: "center", color: "var(--text-muted)" }}>
-              <span style={{ fontSize: "3rem", display: "block", marginBottom: 12 }}>🏠</span>
+              <span style={{ fontSize: "3rem", display: "block", marginBottom: 12, fontWeight: 700, color: "var(--brand)" }}>?</span>
               <p>No stays found in <strong>{locationName}</strong>.</p>
               <p style={{ marginTop: 8 }}>Try Johannesburg, Cape Town, Durban, or Pretoria.</p>
             </div>

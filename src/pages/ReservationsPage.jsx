@@ -176,7 +176,7 @@ function ReservationsPage() {
       {/* Error state */}
       {!loading && error && (
         <div className="reservations-empty">
-          <span className="reservations-empty-icon">⚠️</span>
+          <span className="reservations-empty-icon">!</span>
           <p>{error}</p>
           <button className="btn-primary" onClick={fetchReservations}>
             Retry
@@ -187,7 +187,7 @@ function ReservationsPage() {
       {/* Empty state */}
       {!loading && !error && reservations.length === 0 && (
         <div className="reservations-empty">
-          <span className="reservations-empty-icon">🗓️</span>
+          <span className="reservations-empty-icon">-</span>
           <p>No reservations found yet.</p>
           <Link to="/" className="btn-primary">
             Explore stays

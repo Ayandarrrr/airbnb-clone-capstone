@@ -46,7 +46,7 @@ function AdminDashboard() {
   return (
     <AdminLayout>
       <h1 className="admin-page-title">
-        Welcome back, {user?.username} 👋
+        Welcome back, {user?.username}
       </h1>
       <p className="admin-page-subtitle">
         Manage your property listings and reservations from here.
@@ -55,17 +55,17 @@ function AdminDashboard() {
       {/* ── Stat cards ── */}
       <div className="admin-stats">
         <div className="stat-card">
-          <div className="stat-icon">🏠</div>
+          <div className="stat-icon stat-icon--house"></div>
           <div className="stat-label">Total Listings</div>
-          <div className="stat-value">{loading ? "…" : stats.listings}</div>
+          <div className="stat-value">{loading ? "..." : stats.listings}</div>
         </div>
         <div className="stat-card">
-          <div className="stat-icon">📅</div>
+          <div className="stat-icon stat-icon--calendar"></div>
           <div className="stat-label">Reservations</div>
-          <div className="stat-value">{loading ? "…" : stats.reservations}</div>
+          <div className="stat-value">{loading ? "..." : stats.reservations}</div>
         </div>
         <div className="stat-card">
-          <div className="stat-icon">👤</div>
+          <div className="stat-icon stat-icon--user"></div>
           <div className="stat-label">Role</div>
           <div className="stat-value" style={{ fontSize: "1.2rem", textTransform: "capitalize" }}>
             {user?.role || "—"}

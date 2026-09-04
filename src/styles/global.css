@@ -949,3 +949,59 @@ label.btn-secondary:hover { background: var(--bg-light); }
   color: var(--text-muted);
   font-size: 0.85rem;
 }
+
+/* ── Highlight icons (replaced emojis) ───────────────────── */
+.highlight-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  border: 2px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.highlight-icon--key::after   { content: "KEY"; font-size: 0.6rem; }
+.highlight-icon--clean::after { content: "CLN"; font-size: 0.6rem; }
+
+/* Sleep card icon (replaced bed emoji) */
+.sleep-icon {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto 6px;
+  background: var(--bg-light);
+}
+
+/* Stat card icons (replaced emojis) */
+.stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+}
+.stat-icon--house::after    { content: "HSE"; }
+.stat-icon--calendar::after { content: "CAL"; }
+.stat-icon--user::after     { content: "USR"; }
+
+/* Amenity icon (replaced checkmark emoji) */
+.amenity-icon {
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 1rem;
+}

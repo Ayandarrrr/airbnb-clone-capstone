@@ -4,10 +4,10 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 const navItems = [
-  { to: "/admin",           label: "Dashboard",       icon: "🏠", end: true },
-  { to: "/admin/listings",  label: "View Listings",   icon: "📋" },
-  { to: "/reservations",   label: "Reservations",    icon: "📅" },
-  { to: "/admin/create",    label: "Create Listing",  icon: "➕" },
+  { to: "/admin",           label: "Dashboard",       icon: "H", end: true },
+  { to: "/admin/listings",  label: "View Listings",   icon: "L" },
+  { to: "/reservations",   label: "Reservations",    icon: "R" },
+  { to: "/admin/create",    label: "Create Listing",  icon: "+" },
 ];
 
 function AdminLayout({ children }) {
@@ -43,7 +43,7 @@ function AdminLayout({ children }) {
             onClick={handleLogout}
             style={{ width: "100%", textAlign: "left" }}
           >
-            <span className="sidebar-icon" aria-hidden="true">🚪</span>
+            <span className="sidebar-icon" aria-hidden="true">x</span>
             Log out
           </button>
         </nav>

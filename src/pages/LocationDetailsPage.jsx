@@ -49,9 +49,9 @@ function Stars({ rating }) {
   return (
     <span className="stars" aria-label={`${rating} out of 5 stars`}>
       {Array.from({ length: 5 }, (_, i) => {
-        if (i < full) return <span key={i} className="star full">★</span>;
-        if (i === full && half) return <span key={i} className="star half">½</span>;
-        return <span key={i} className="star empty">☆</span>;
+        if (i < full) return <span key={i} className="star full">*</span>;
+        if (i === full && half) return <span key={i} className="star half">~</span>;
+        return <span key={i} className="star empty">-</span>;
       })}
       <span className="stars-value">{rating}</span>
     </span>
@@ -105,7 +105,7 @@ function CostCalculator({ listing }) {
         },
         token ? { headers: { Authorization: `Bearer ${token}` } } : {}
       );
-      setReservationMsg("✓ Reservation created successfully!");
+      setReservationMsg("Reservation created successfully!");
     } catch (err) {
       // Fall back gracefully if backend is not running
       setReservationMsg(
@@ -205,7 +205,7 @@ function CostCalculator({ listing }) {
       </button>
 
       {reservationMsg && (
-        <p className={`reservation-msg ${reservationMsg.startsWith("✓") ? "success" : "error"}`}>
+        <p className={`reservation-msg ${reservationMsg.startsWith("Reservation created") ? "success" : "error"}`}>
           {reservationMsg}
         </p>
       )}
@@ -294,7 +294,7 @@ function LocationDetailsPage() {
           <div className="listing-highlights">
             {listing.selfCheckIn && (
               <div className="highlight-item">
-                <span className="highlight-icon">🔑</span>
+                <span className="highlight-icon highlight-icon--key"></span>
                 <div>
                   <strong>Self check-in</strong>
                   <p>Check yourself in with the lockbox.</p>
@@ -303,7 +303,7 @@ function LocationDetailsPage() {
             )}
             {listing.enhancedCleaning && (
               <div className="highlight-item">
-                <span className="highlight-icon">🧹</span>
+                <span className="highlight-icon highlight-icon--clean"></span>
                 <div>
                   <strong>Enhanced Clean</strong>
                   <p>This host committed to Airbnb's enhanced cleaning process.</p>
@@ -327,7 +327,7 @@ function LocationDetailsPage() {
           <div className="listing-sleep">
             <h3>Where you'll sleep</h3>
             <div className="sleep-card">
-              <span className="sleep-icon">🛏</span>
+              <span className="sleep-icon"></span>
               <p>Bedroom</p>
               <p>{listing.bedrooms} bed{listing.bedrooms !== 1 ? "s" : ""}</p>
             </div>
@@ -340,7 +340,7 @@ function LocationDetailsPage() {
             <ul className="amenities-list">
               {(listing.amenities || []).map((a) => (
                 <li key={a} className="amenity-item">
-                  <span className="amenity-icon" aria-hidden="true">✓</span> {a}
+                  <span className="amenity-icon" aria-hidden="true">+</span> {a}
                 </li>
               ))}
             </ul>

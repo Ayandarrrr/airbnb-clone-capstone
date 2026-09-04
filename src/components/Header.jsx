@@ -80,7 +80,7 @@ function Header() {
                   role="menuitem"
                   onClick={() => setDropdownOpen(false)}
                 >
-                  📅 View Reservations
+                  View Reservations
                 </Link>
 
                 {/* Admin / host: show dashboard link */}
@@ -91,7 +91,7 @@ function Header() {
                     role="menuitem"
                     onClick={() => setDropdownOpen(false)}
                   >
-                    🏠 Admin Dashboard
+                    Admin Dashboard
                   </Link>
                 )}
 
@@ -102,7 +102,7 @@ function Header() {
                   role="menuitem"
                   onClick={handleLogout}
                 >
-                  🚪 Log out
+                  Log out
                 </button>
               </div>
             )}
